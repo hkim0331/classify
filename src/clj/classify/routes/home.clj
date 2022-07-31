@@ -26,7 +26,7 @@
     src))
 
 (defn move-docs
-  "atom current のファイルをdest に移動する。"
+  "ファイル current をフォルダ dest に移動する。"
   [{{:keys [dest]} :path-params}]
   (let [dest (str (env :base dest) dest)]
     (println "move" @current dest)
