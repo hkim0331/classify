@@ -11,6 +11,8 @@
    [clojure.string :as string])
   (:import goog.History))
 
+(def ^:private version "0.1.0")
+
 (defonce session (r/atom {:page :home}))
 
 (defn nav-link [uri title page]

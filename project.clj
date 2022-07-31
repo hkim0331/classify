@@ -1,7 +1,7 @@
-(defproject classify "0.1.0-SNAPSHOT"
+(defproject classify "0.1.0"
 
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+  :description "classify students report files, etc."
+  :url "http://localhost:3000"
 
   :dependencies [[ch.qos.logback/logback-classic "1.2.10"]
                  [cljs-ajax "0.8.4"]
