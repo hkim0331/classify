@@ -4,17 +4,19 @@
    [classify.layout :as layout]
    [clojure.java.io :as io]
    [clojure.java.shell :refer [sh]]
+   [clojure.tools.logging :as log]
    [classify.middleware :as middleware]
    [ring.util.response]
    [ring.util.http-response :as response]))
 
-(def ^:private version "0.1.0")
-(def ^:private updated_at "2022-07-31 15:55:46")
+(def ^:private version "0.2.0-SNAPSHOT")
+(def ^:private updated_at "2022-07-31 21:46:32")
+
+;; being reset in docs
+(def current (atom nil))
 
 (defn entries [dir]
   (-> dir io/file .list seq))
-
-(def current (atom nil))
 
 (defn docs []
   (let [dir  (str (env :base) (env :src))
@@ -26,13 +28,13 @@
     src))
 
 (defn move-docs
-  "atom current のファイルをdest に移動する。"
+  "current のファイルを dest に移動する。"
   [{{:keys [dest]} :path-params}]
   (let [dest (str (env :base dest) dest)]
-    (println "move" @current dest)
+    (log/info @current dest)
     (try
       (sh "mv" @current dest)
-      (catch Exception e (println (.getMessage e))))))
+      (catch Exception e (log/error (.getMessage e))))))
 
 (defn home-page [request]
   (layout/render request "home.html"))
