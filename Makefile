@@ -1,0 +1,2 @@
+xmlhttprequest:
+	npm install xmlhttprequest
