@@ -8,6 +8,9 @@
    [ring.util.response]
    [ring.util.http-response :as response]))
 
+(def ^:private version "0.1.0")
+(def ^:private updated_at "2022-07-31 15:55:46")
+
 (defn entries [dir]
   (-> dir io/file .list seq))
 
