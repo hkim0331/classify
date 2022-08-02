@@ -28,7 +28,7 @@
     src))
 
 (defn move-docs
-  "ファイル current をフォルダ dest に移動する。"
+  "move file `current` to folder `dest`"
   [{{:keys [dest]} :path-params}]
   (let [dest (str (env :base dest) dest)]
     (log/info @current dest)
