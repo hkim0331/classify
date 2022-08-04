@@ -30,6 +30,18 @@ To start a web server for the application, run:
 
     lein run
 
+or,
+
+```sh
+#!/bin/sh
+export BASE="/Users/hkim/ramdisk/"
+export SRC="unsorted/"
+export DESTS='{"A" "a/" "B" "b/" "C" "c/" "D" "d/" "Other" "other/"}'
+java -jar target/uberjar/classify.jar
+```
+
+
+
 ## License
 
 Copyright © 2022 Hiroshi Kimura
