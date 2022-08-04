@@ -11,7 +11,7 @@
    [clojure.string :as string])
   (:import goog.History))
 
-(def ^:private version "0.2.0-SNAPSHOT")
+(def ^:private version "0.2.0")
 
 (defonce session (r/atom {:page :home}))
 
