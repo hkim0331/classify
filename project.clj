@@ -1,4 +1,4 @@
-(defproject classify "0.3.3-SNAPSHOT"
+(defproject classify "0.3.3"
 
   :description "classify students report files, etc."
   :url "http://localhost:3000"
