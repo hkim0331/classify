@@ -5,6 +5,7 @@
    [clojure.java.io :as io]
    [clojure.java.shell :refer [sh]]
    [clojure.tools.logging :as log]
+   ;;[clojure.string :as str]
    [classify.middleware :as middleware]
    [ring.util.response]
    [ring.util.http-response :as response]))
@@ -12,7 +13,7 @@
 (def ^:private version "0.3.3")
 (def ^:private updated_at "2022-08-05 12:36:06")
 
-;; being reset in docs
+;; being reset in docs. keep current filename.
 (def current (atom nil))
 
 (defn entries [dir]
@@ -25,7 +26,7 @@
                  first)
         src (str dir file)]
     (reset! current src)
-    src))
+    @current))
 
 (defn count-docs []
  (let [dir (str (env :base) (env :src))]
@@ -49,7 +50,7 @@
                  middleware/wrap-formats]}
    ["/" {:get home-page}]
    ["/docs" {:get (fn [_]
-                    (-> (response/ok (-> (docs) slurp))
+                    (-> (response/ok (slurp (docs)))
                         (response/header "Content-Type" "text/plain; charset=utf-8")))}]
    ["/move/:dest" {:get #(do (move-docs %)
                              (-> (response/ok "OK")
