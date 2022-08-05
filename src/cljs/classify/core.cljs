@@ -11,7 +11,7 @@
    [clojure.string :as string])
   (:import goog.History))
 
-(def ^:private version "0.2.0")
+(def ^:private version "0.3.0")
 
 (defonce session (r/atom {:page :home}))
 
@@ -65,7 +65,7 @@
 (defn home-page []
   [:section.section>div.container>div.content
    (when-let [docs (:docs @session)]
-     [:pre docs])
+     [:p docs])
    (buttons-component)])
 
 (def pages
