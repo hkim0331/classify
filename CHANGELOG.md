@@ -8,19 +8,16 @@
 - classify-2
   - classify: from unsort to a, b, c, d or other.
   - classify-2: from a,b,c,d to a,b,c,d.
-* test, even if after coding
-  - test first
-  - coding first
 * 毎回 entries を呼ばず、立ち上げ時に ベクタに保存して pop する。
 `next` は読み込み直しに変更。
-* 人数の表示
-* エラーで終了する。
+* エラーで終了する。=> 残りカウントで終了はわかる。
+* p/pre を自動判定できないか？
 
-## 0.3.3-SNAPSHOT
+
+## 0.3.3 - 2022-08-05
 - 0.3.0 のテーブルをプレビュー可能にした。
-
-## 0.3.2
-- p を pre に戻す。
+- バージョン表示
+- 残り人数の表示
 
 ## 0.3.1
 - pre を p に変更。

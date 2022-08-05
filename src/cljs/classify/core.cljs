@@ -11,6 +11,7 @@
    [clojure.string :as string])
   (:import goog.History))
 
+;; bump-version.sh updates this.
 (def ^:private version "0.3.3-SNAPSHOT")
 
 (defonce session (r/atom {:page :home}))
@@ -39,7 +40,8 @@
 
 (defn about-page []
   [:section.section>div.container>div.content
-   [:img {:src "/img/warning_clojure.png"}]])
+   [:img {:src "/img/warning_clojure.png"}]
+   [:p "version " version]])
 
 (declare fetch-docs! move-docs!)
 
@@ -64,6 +66,7 @@
 
 (defn home-page []
   [:section.section>div.container>div.content
+   [:p (:count @session)]
    (when-let [docs (:docs @session)]
      [:p docs])
    (buttons-component)])
@@ -102,7 +105,8 @@
 ;; -------------------------
 ;; Initialize app
 (defn fetch-docs! []
-  (GET "/docs" {:handler #(swap! session assoc :docs %)}))
+  (GET "/docs"  {:handler #(swap! session assoc :docs %)})
+  (GET "/count" {:handler #(swap! session assoc :count %)}))
 
 (defn ^:dev/after-load mount-components []
   (rdom/render [#'navbar] (.getElementById js/document "navbar"))
