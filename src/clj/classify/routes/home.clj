@@ -9,8 +9,8 @@
    [ring.util.response]
    [ring.util.http-response :as response]))
 
-(def ^:private version "0.3.0")
-(def ^:private updated_at "2022-08-05 12:04:20")
+(def ^:private version "0.3.3")
+(def ^:private updated_at "2022-08-05 12:36:06")
 
 ;; being reset in docs
 (def current (atom nil))
@@ -26,6 +26,10 @@
         src (str dir file)]
     (reset! current src)
     src))
+
+(defn count-docs []
+ (let [dir (str (env :base) (env :src))]
+  (-> dir entries count)))
 
 (defn move-docs
   "move file `current` to folder `dest`"
@@ -49,4 +53,6 @@
                         (response/header "Content-Type" "text/plain; charset=utf-8")))}]
    ["/move/:dest" {:get #(do (move-docs %)
                              (-> (response/ok "OK")
-                                 (response/header "Content-Type" "text/plain")))}]])
+                                 (response/header "Content-Type" "text/plain")))}]
+   ["/count" {:get (fn [_] (-> (response/ok (str (count-docs)))
+                               (response/header "Content-Type" "text/plain")))}]])

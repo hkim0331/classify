@@ -8,25 +8,24 @@
 - classify-2
   - classify: from unsort to a, b, c, d or other.
   - classify-2: from a,b,c,d to a,b,c,d.
-* test, even if after coding
-  - test first
-  - coding first
 * 毎回 entries を呼ばず、立ち上げ時に ベクタに保存して pop する。
 `next` は読み込み直しに変更。
-* 人数の表示
-* エラーで終了する。
+* エラーで終了する。=> 残りカウントで終了はわかる。
+* p/pre を自動判定できないか？
 
-## 0.3.2
-- p を pre に戻す。
+
+## 0.3.3 - 2022-08-05
+- 0.3.0 のテーブルをプレビュー可能にした。
+- バージョン表示
+- 残り人数の表示
 
 ## 0.3.1
 - pre を p に変更。
 
 ## 0.3.0-SNAPSHOT
 
-```
 |       :file |                                           :name |  :current |   :latest |
-|-------------+-------------------------------------------------+-----------+-----------|
+|-------------|-------------------------------------------------|-----------|-----------|
 | project.clj |                              binaryage/devtools |     1.0.4 |     1.0.6 |
 |             |                  ch.qos.logback/logback-classic |    1.2.10 |    1.2.11 |
 |             |                               cider/cider-nrepl |    0.26.0 |    0.28.5 |
@@ -43,7 +42,7 @@
 |             |                                 reagent/reagent |     1.1.0 |     1.1.1 |
 |             |                                   selmer/selmer |   1.12.50 |   1.12.53 |
 |             |                            thheller/shadow-cljs |    2.18.0 |    2.19.8 |
-```
+
 
 ## 0.2.0 - 2022-07-31
 - clojure.tools.logging
