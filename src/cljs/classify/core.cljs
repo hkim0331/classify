@@ -68,7 +68,7 @@
   [:section.section>div.container>div.content
    [:p (:count @session)]
    (when-let [docs (:docs @session)]
-     [:p docs])
+     [:pre docs])
    (buttons-component)])
 
 (def pages
