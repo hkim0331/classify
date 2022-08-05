@@ -9,8 +9,8 @@
    [ring.util.response]
    [ring.util.http-response :as response]))
 
-(def ^:private version "0.2.0")
-(def ^:private updated_at "2022-08-04 10:20:32")
+(def ^:private version "0.3.1")
+(def ^:private updated_at "2022-08-05 11:10:16")
 
 ;; being reset in docs
 (def current (atom nil))
