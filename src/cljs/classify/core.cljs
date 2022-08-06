@@ -12,7 +12,7 @@
   (:import goog.History))
 
 ;; bump-version.sh updates this.
-(def ^:private version "0.3.3")
+(def ^:private version "0.3.4")
 
 (defonce session (r/atom {:page :home}))
 
@@ -67,8 +67,9 @@
 (defn home-page []
   [:section.section>div.container>div.content
    [:p (:count @session)]
+   (buttons-component)
    (when-let [docs (:docs @session)]
-     [:p docs])
+     [:pre docs])
    (buttons-component)])
 
 (def pages
