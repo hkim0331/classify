@@ -10,8 +10,8 @@
    [ring.util.response]
    [ring.util.http-response :as response]))
 
-(def ^:private version "0.3.3")
-(def ^:private updated_at "2022-08-05 12:36:06")
+(def ^:private version "0.3.4")
+(def ^:private updated_at "2022-08-07 08:26:16")
 
 ;; being reset in docs. keep current filename.
 (def current (atom nil))
