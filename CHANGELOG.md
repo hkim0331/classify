@@ -2,18 +2,25 @@
 
 ## Unreleased
 - Undo
-- test, even if after coding
-  - test first
-  - coding first
-- classify-2
-  - classify: from unsort to a, b, c, d or other.
-  - classify-2: from a,b,c,d to a,b,c,d.
-* 毎回 entries を呼ばず、立ち上げ時に ベクタに保存して pop する。
-`next` は読み込み直しに変更。
-* エラーで終了する。=> 残りカウントで終了はわかる。
-* p/pre を自動判定できないか？
+- 立ち上げ直後、unsorted/ がカラだとエラーを出す。
 
 ## v0.4-SNAPSHOT
+- fully updated libraries.
+- bulma/1.0.1 はエラーを出さなくなったか？
+
+| :file       | :name                                           | :current  | :latest   |
+|------------ | ----------------------------------------------- | --------- | ----------|
+| project.clj | com.google.javascript/closure-compiler-unshaded | v20220719 | v20240317 |
+|             | jonase/eastwood                                 | 1.2.4     | 1.4.2     |
+|             | org.webjars.npm/bulma                           | 0.9.4     | 1.0.1     |
+|             | ring/ring-core                                  | 1.9.5     | 1.12.1    |
+|             | ring/ring-defaults                              | 0.3.3     | 0.5.0     |
+|             | ring/ring-devel                                 | 1.9.5     | 1.12.1    |
+|             | thheller/shadow-cljs                            | 2.19.8    | 2.28.8    |
+
+
+## v0.4.37 / 2024-06-08
+
 ### Changed
 - libraries updated only which has same minor version.
 
@@ -24,9 +31,7 @@
 |             | cider/cider-nrepl                               | 0.28.5    | 0.49.0    |
 |             | clojure.java-time/clojure.java-time             | 0.3.3     | 1.4.2     |
 |             | com.cognitect/transit-clj                       | 1.0.329   | 1.0.333   |
-|             | com.google.javascript/closure-compiler-unshaded | v20220719 | v20240317 |
 |             | cprop/cprop                                     | 0.1.19    | 0.1.20    |
-|             | jonase/eastwood                                 | 1.2.4     | 1.4.2     |
 |             | luminus-transit/luminus-transit                 | 0.1.5     | 0.1.6     |
 |             | luminus-undertow/luminus-undertow               | 0.1.14    | 0.1.18    |
 |             | markdown-clj/markdown-clj                       | 1.11.2    | 1.12.1    |
@@ -42,13 +47,9 @@
 |             | org.clojure/tools.namespace                     | 1.3.0     | 1.5.0     |
 |             | org.webjars.npm/bulma                           | 0.9.4     | 1.0.1     |
 |             | org.webjars.npm/material-icons                  | 1.10.8    | 1.13.2    |
-|             | org.webjars/webjars-locator                     | 0.45      | 0.52      |
 |             | reagent/reagent                                 | 1.1.1     | 1.2.0     |
-|             | ring/ring-core                                  | 1.9.5     | 1.12.1    |
-|             | ring/ring-defaults                              | 0.3.3     | 0.5.0     |
-|             | ring/ring-devel                                 | 1.9.5     | 1.12.1    |
 |             | selmer/selmer                                   | 1.12.53   | 1.12.61   |
-|             | thheller/shadow-cljs                            | 2.19.8    | 2.28.8    |
+
 
 
 ## 0.3.4 - 2022-08-07
