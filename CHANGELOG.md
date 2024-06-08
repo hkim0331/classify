@@ -5,6 +5,7 @@
 - 立ち上げ直後、unsorted/ がカラだとエラーを出す。
 
 ## v0.4-SNAPSHOT
+- updated `bump-version.sh` to modify `CHANGELOG.md`.
 - fully updated libraries.
 - bulma/1.0.1 はエラーを出さなくなったか？
 
