@@ -4,7 +4,7 @@
 - Undo
 - 立ち上げ直後、unsorted/ がカラだとエラーを出す。
 
-## v0.4-SNAPSHOT
+## v0.4.42 / 2024-06-08
 - updated `bump-version.sh` to modify `CHANGELOG.md`.
 - fully updated libraries.
 - bulma/1.0.1 はエラーを出さなくなったか？
@@ -64,7 +64,7 @@
 ## 0.3.1
 - pre を p に変更。
 
-## 0.3.0-SNAPSHOT
+## v0.4.42 / 2024-06-08
 
 |       :file |                                           :name |  :current |   :latest |
 |-------------|-------------------------------------------------|-----------|-----------|
