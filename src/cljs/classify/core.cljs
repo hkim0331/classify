@@ -12,7 +12,7 @@
   (:import goog.History))
 
 ;; bump-version.sh updates this.
-(def ^:private version "0.3.4")
+(def ^:private version "v0.4.37")
 
 (defonce session (r/atom {:page :home}))
 
