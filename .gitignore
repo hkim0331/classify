@@ -15,4 +15,7 @@ profiles.clj
 /node_modules
 /log
 
+/.calva/output-window
+/.clj-kondo/.cache
+/.lsp/.cache
 
