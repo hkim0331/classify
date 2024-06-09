@@ -69,7 +69,8 @@
    [:p (:count @session)]
    (buttons-component)
    (when-let [docs (:docs @session)]
-     [:pre docs])
+     ;; was :pre
+     [:p docs])
    (buttons-component)])
 
 (def pages

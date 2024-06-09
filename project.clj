@@ -18,8 +18,7 @@
                  [luminus/ring-ttl-session "0.3.3"]
                  [markdown-clj "1.12.1"]
                  [metosin/muuntaja "0.6.10"]
-                 [metosin/reitit "0.7.0"]
-                 [metosin/ring-http-response "0.9.3"]
+                 [metosin/reitit "0.7.0"] [metosin/ring-http-response "0.9.3"]
                  [mount "0.1.18"]
                  [nrepl "1.1.2"]
                  [org.clojure/clojure "1.11.3"]
@@ -49,8 +48,11 @@
   :clean-targets ^{:protect false}
   [:target-path "target/cljsbuild"]
 
+
   :profiles
   {:uberjar {:omit-source true
+             :prep-tasks ["compile"
+                          ["run" "-m" "shadow.cljs.devtools.cli" "release" "app"]]
              :aot :all
              :uberjar-name "classify.jar"
              :source-paths ["env/prod/clj"  "env/prod/cljs"]

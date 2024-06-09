@@ -1,9 +1,22 @@
 # classify
 
+need to upgrade/maintain? try to new `sorting` app?
+
 ## Unreleased
-- jar に shadow-cljs が入らない。
 - Undo
 - 立ち上げ直後、unsorted/ がカラだとエラーを出す。
+
+
+## v0.4-SNAPSHOT
+### Changed
+- cljs/classify.core/home-page - [:pre] to [:p]
+### Added
+- fixed: jar に shadow-cljs が入らない。
+  project.clj に追加。
+```
+    :prep-tasks ["compile"
+        ["run" "-m" "shadow.cljs.devtools.cli" "release" "app"]]
+```
 
 ## v0.4.42 / 2024-06-08
 - updated `bump-version.sh` to modify `CHANGELOG.md`.
