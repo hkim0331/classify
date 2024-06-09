@@ -15,6 +15,8 @@ if [ -z "$1" ]; then
     echo "usage: $0 <version>"
     exit
 fi
+VER=$1
+
 
 # use  extended regular expressions in the script
 if [ -x "${HOMEBREW_PREFIX}/bin/gsed" ]; then
@@ -22,6 +24,11 @@ if [ -x "${HOMEBREW_PREFIX}/bin/gsed" ]; then
 else
     SED="/usr/bin/sed -E"
 fi
+
+# CHANGELOG.md
+TODAY=`date +%F`
+${SED} -i -e "/SNAPSHOT/c\
+## ${VER} / ${TODAY}" CHANGELOG.md
 
 # project.clj
 ${SED} -i.bak "s/(defproject \S+) \S+/\1 \"$1\"/" project.clj
@@ -40,4 +47,3 @@ ${SED} -i.bak \
 ${SED} -i.bak \
     -e "s/app.js\?version=.*/app.js?version=$1\"%}/" \
     resources/html/home.html
-
