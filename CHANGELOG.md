@@ -1,17 +1,18 @@
 # classify
 
 ## Unreleased
+- jar に shadow-cljs が入らない。
 - Undo
-- test, even if after coding
-  - test first
-  - coding first
-- classify-2
-  - classify: from unsort to a, b, c, d or other.
-  - classify-2: from a,b,c,d to a,b,c,d.
 * 毎回 entries を呼ばず、立ち上げ時に ベクタに保存して pop する。
 `next` は読み込み直しに変更。
 * エラーで終了する。=> 残りカウントで終了はわかる。
 * p/pre を自動判定できないか？
+
+## 0.4-SNAPSHOT
+2024年度用 classify. 名前は sorting の方が良さそう。
+
+
+----
 
 ## 0.3.4 - 2022-08-07
 - ページ上部にもボタン
