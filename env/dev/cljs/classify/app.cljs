@@ -1,12 +1,12 @@
 (ns ^:dev/once classify.app
   (:require
-    [classify.core :as core]
-    [cljs.spec.alpha :as s]
-    [expound.alpha :as expound]
-    [devtools.core :as devtools]))
+   [classify.core :as core]
+   [cljs.spec.alpha :as s]
+   [expound.alpha :as expound]
+   [devtools.core :as devtools]))
 
 (extend-protocol IPrintWithWriter
-  js/Symbol
+  symbol
   (-pr-writer [sym writer _]
     (-write writer (str "\"" (.toString sym) "\""))))
 
