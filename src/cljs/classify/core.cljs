@@ -67,10 +67,15 @@
 (defn home-page []
   [:section.section>div.container>div.content
    [:p (:count @session)]
+   [:h1 "are?"]
    (buttons-component)
    (when-let [docs (:docs @session)]
      ;; was :pre
-     [:p docs])
+     ;; was [:p docs]
+     (.log js/console docs)
+     (.log js/console (md->html docs))
+     (md->html docs)
+     [:h1 "<h1>h1</h1>"])
    (buttons-component)])
 
 (def pages

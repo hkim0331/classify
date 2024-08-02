@@ -48,7 +48,6 @@
   :clean-targets ^{:protect false}
   [:target-path "target/cljsbuild"]
 
-
   :profiles
   {:uberjar {:omit-source true
 
