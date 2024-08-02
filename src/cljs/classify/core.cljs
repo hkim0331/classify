@@ -4,7 +4,8 @@
    [reagent.dom :as rdom]
    [goog.events :as events]
    [goog.history.EventType :as HistoryEventType]
-   [markdown.core :refer [md->html]]
+   ;; [markdown.core :refer [md->html]]
+   [markdown-to-hiccup.core :as m]
    [classify.ajax :as ajax]
    [ajax.core :refer [GET POST]]
    [reitit.core :as reitit]
@@ -12,7 +13,7 @@
   (:import goog.History))
 
 ;; bump-version.sh updates this.
-(def ^:private version "0.3.4")
+(def ^:private version "v0.5.53")
 
 (defonce session (r/atom {:page :home}))
 
@@ -69,7 +70,10 @@
    [:p (:count @session)]
    (buttons-component)
    (when-let [docs (:docs @session)]
-     [:pre docs])
+     ;; (md->html docs)
+     ;; was [:pre docs]
+     ;; was [:p docs]
+     (m/md->hiccup docs))
    (buttons-component)])
 
 (def pages

@@ -40,7 +40,16 @@ export DESTS='{"A" "a/" "B" "b/" "C" "c/" "D" "d/" "Other" "other/"}'
 java -jar target/uberjar/classify.jar
 ```
 
+## Example usage
 
+```sh
+% cd <to this directory>
+% npx shadow-cljs watch app
+% tar -cf unsorted | (cd ~/ramdisk && tar -xf -)
+% code .
+clj:user> (start)
+% open http://localhost:3000
+```
 
 ## License
 

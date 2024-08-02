@@ -1,0 +1,17 @@
+services:
+  clojure:
+    image: clojure:lein
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+      - m2:/root/.m2
+      - gitlibs:/root/.gitlibs
+    entrypoint:
+      - sleep
+      - infinity
+
+volumes:
+  m2:
+    external: true
+  gitlibs:
+    external: true
