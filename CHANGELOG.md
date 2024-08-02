@@ -5,9 +5,9 @@ need to upgrade/maintain? try to new `sorting` app?
 ## Unreleased
 - Undo
 - 立ち上げ直後、unsorted/ がカラだとエラーを出す。
+- cljs: p/pre/md->hiccup を実行時に選択できる。
 
-
-## v0.4-SNAPSHOT
+## v0.5-SNAPSHOT
 ### Changed
 - cljs/classify.core/home-page - [:pre] to [:p]
 ### Added

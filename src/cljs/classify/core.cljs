@@ -4,7 +4,8 @@
    [reagent.dom :as rdom]
    [goog.events :as events]
    [goog.history.EventType :as HistoryEventType]
-   [markdown.core :refer [md->html]]
+   ;; [markdown.core :refer [md->html]]
+   [markdown-to-hiccup.core :as m]
    [classify.ajax :as ajax]
    [ajax.core :refer [GET POST]]
    [reitit.core :as reitit]
@@ -67,15 +68,12 @@
 (defn home-page []
   [:section.section>div.container>div.content
    [:p (:count @session)]
-   [:h1 "are?"]
    (buttons-component)
    (when-let [docs (:docs @session)]
-     ;; was :pre
+     ;; (md->html docs)
+     ;; was [:pre docs]
      ;; was [:p docs]
-     (.log js/console docs)
-     (.log js/console (md->html docs))
-     (md->html docs)
-     [:h1 "<h1>h1</h1>"])
+     (m/md->hiccup docs))
    (buttons-component)])
 
 (def pages
