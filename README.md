@@ -51,6 +51,11 @@ clj:user> (start)
 % open http://localhost:3000
 ```
 
+## Calva
+
+1. Leiningen + shadow-cljs
+2. after stating, choose :app to build.
+
 ## License
 
 Copyright © 2022 Hiroshi Kimura
