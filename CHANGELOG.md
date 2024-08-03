@@ -5,6 +5,9 @@ need to upgrade/maintain? try to new `sorting` app?
 ## Unreleased
 - Undo
 - 立ち上げ直後、unsorted/ がカラだとエラーを出す。
+
+
+## v0.5-SNAPSHOT
 - cljs: p/pre/md->hiccup を実行時に選択できる。
 
 ## v0.5.53 / 2024-08-02
