@@ -26,7 +26,7 @@ See dev-config.edn. Other than luminus app settings,
          "D" "d/"
          "Other" "o/"}}
 
-To start a web server for the application, run:
+To start the application, run:
 
     lein run
 

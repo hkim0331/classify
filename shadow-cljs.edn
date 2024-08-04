@@ -1,4 +1,4 @@
-{:nrepl {:port 7022}
+{:nrepl {:port 7002}
  :builds
         {:app
                {:target     :browser
