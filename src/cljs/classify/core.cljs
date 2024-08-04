@@ -22,6 +22,14 @@
    {:href   uri
     :class (when (= page (:page @session)) "is-active")}
    title])
+(comment
+  (println "hello")
+  (try
+    (m/md->hiccup "今大学生活が始まって<span style=\"color: red;\">*約３か月*</span>が立つが今使うことのできる自分で管理する自由な時間についてわかってきた気がする。入学してきたときは自由な時間と言われたら遊ぶようなことしか考えてなかったけれど<span style=\"color: red;\">*自分を磨くという意味での「自由」な時間*</span>でもあると思えるようになりました。早めに校長先生の話を知ることができて良かったと思いました。")
+    (catch js/Error e
+      (println "zero div")
+      ))
+  :rcf)
 
 (defn navbar []
   (r/with-let [expanded? (r/atom false)]
@@ -68,11 +76,11 @@
 (defn home-page []
   [:section.section>div.container>div.content
    [:p (:count @session)]
+   (.log js/console (str @session))
    (buttons-component)
    (when-let [docs (:docs @session)]
      ;; (md->html docs)
      ;; was [:pre docs]
-     ;; was [:p docs]
      (m/md->hiccup docs))
    (buttons-component)])
 
