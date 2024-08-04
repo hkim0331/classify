@@ -26,7 +26,11 @@
                  first)
         src (str dir file)]
     (reset! current src)
-    @current))
+    (log/info "docs" @current)
+    (try
+      (slurp @current)
+      (catch Exception _
+        ""))))
 
 (defn count-docs []
  (let [dir (str (env :base) (env :src))]
@@ -50,7 +54,7 @@
                  middleware/wrap-formats]}
    ["/" {:get home-page}]
    ["/docs" {:get (fn [_]
-                    (-> (response/ok (slurp (docs)))
+                    (-> (response/ok (docs))
                         (response/header "Content-Type" "text/plain; charset=utf-8")))}]
    ["/move/:dest" {:get #(do (move-docs %)
                              (-> (response/ok "OK")

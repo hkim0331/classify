@@ -4,11 +4,25 @@ need to upgrade/maintain? try to new `sorting` app?
 
 ## Unreleased
 - Undo
-- 立ち上げ直後、unsorted/ がカラだとエラーを出す。
-
-
-## v0.5-SNAPSHOT
 - cljs: p/pre/md->hiccup を実行時に選択できる。
+- Leiningen + shadow-cljs で REPL につながらなくなった。ビルド後、
+```
+; Failed starting cljs repl for build: :app. Is the build running and connected?
+;    See the Output channel "Calva Connection Log" for any hints on what went wrong.
+; Jack-in done.
+
+```
+
+## v0.6-SNAPSHOT
+- re-catch
+  https://github.com/potapenko/re-catch
+- 読み出す回答が尽きてもエラーにしない。
+```
+    (try
+      (slurp @current)
+      (catch Exception _
+        ""))
+```
 
 ## v0.5.53 / 2024-08-02
 ### Changed
