@@ -1,19 +1,20 @@
 (ns classify.core
   (:require
-   [reagent.core :as r]
-   [reagent.dom :as rdom]
+   ;; [markdown.core :refer [md->html]]
+   [ajax.core :refer [GET POST]]
+   [classify.ajax :as ajax]
+   [clojure.string :as string]
    [goog.events :as events]
    [goog.history.EventType :as HistoryEventType]
-   ;; [markdown.core :refer [md->html]]
    [markdown-to-hiccup.core :as m]
-   [classify.ajax :as ajax]
-   [ajax.core :refer [GET POST]]
-   [reitit.core :as reitit]
-   [clojure.string :as string])
+   [re-catch.core :as rc]
+   [reagent.core :as r]
+   [reagent.dom :as rdom]
+   [reitit.core :as reitit])
   (:import goog.History))
 
 ;; bump-version.sh updates this.
-(def ^:private version "v0.5.53")
+(def ^:private version "v0.6.66")
 
 (defonce session (r/atom {:page :home}))
 
@@ -22,6 +23,15 @@
    {:href   uri
     :class (when (= page (:page @session)) "is-active")}
    title])
+
+(comment
+  (println "hello")
+  (try
+    (m/md->hiccup "今大学生活が始まって<span style=\"color: red;\">*約３か月*</span>が立つが今使うことのできる自分で管理する自由な時間についてわかってきた気がする。入学してきたときは自由な時間と言われたら遊ぶようなことしか考えてなかったけれど<span style=\"color: red;\">*自分を磨くという意味での「自由」な時間*</span>でもあると思えるようになりました。早めに校長先生の話を知ることができて良かったと思いました。")
+    (catch js/Error e
+      (println "zero div")
+      ))
+  :rcf)
 
 (defn navbar []
   (r/with-let [expanded? (r/atom false)]
@@ -48,7 +58,6 @@
 
 (defn move-docs! [dest]
   (let [url (str "/move/" dest)]
-    ;;(js/alert (str "url:" url))
     (GET url {:handler #(fetch-docs!)
               :error-handler #(js/alert "error: " %)})))
 
@@ -66,15 +75,16 @@
                            :on-click #(move-docs! k)}]])])
 
 (defn home-page []
-  [:section.section>div.container>div.content
-   [:p (:count @session)]
-   (buttons-component)
-   (when-let [docs (:docs @session)]
-     ;; (md->html docs)
-     ;; was [:pre docs]
-     ;; was [:p docs]
-     (m/md->hiccup docs))
-   (buttons-component)])
+  (let [c (:count @session)]
+    ;; (js/alert (:docs @session))
+    [:section.section>div.container>div.content
+     [:p c]
+     (when (pos? c)
+       [:div
+        [buttons-component]
+        [rc/catch (m/md->hiccup (:docs @session))]
+        [buttons-component]])]))
+
 
 (def pages
   {:home #'home-page

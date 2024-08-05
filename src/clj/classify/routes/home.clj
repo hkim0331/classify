@@ -10,8 +10,8 @@
    [ring.util.response]
    [ring.util.http-response :as response]))
 
-(def ^:private version "v0.5.53")
-(def ^:private updated_at "2024-08-02 15:09:41")
+(def ^:private version "v0.6.66")
+(def ^:private updated_at "2024-08-05 13:20:34")
 
 ;; being reset in docs. keep current filename.
 (def current (atom nil))
@@ -26,7 +26,11 @@
                  first)
         src (str dir file)]
     (reset! current src)
-    @current))
+    (log/info "docs" @current)
+    (try
+      (slurp @current)
+      (catch Exception _
+        ""))))
 
 (defn count-docs []
  (let [dir (str (env :base) (env :src))]
@@ -50,7 +54,7 @@
                  middleware/wrap-formats]}
    ["/" {:get home-page}]
    ["/docs" {:get (fn [_]
-                    (-> (response/ok (slurp (docs)))
+                    (-> (response/ok (docs))
                         (response/header "Content-Type" "text/plain; charset=utf-8")))}]
    ["/move/:dest" {:get #(do (move-docs %)
                              (-> (response/ok "OK")

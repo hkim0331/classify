@@ -1,4 +1,4 @@
-(defproject classify "v0.5.53"
+(defproject classify "v0.6.66"
 
   :description "classify students report files, etc."
   :url "http://localhost:3000"
@@ -31,6 +31,7 @@
                  [org.webjars.npm/material-icons "1.13.2"]
                  [org.webjars/webjars-locator "0.52"]
                  [org.webjars/webjars-locator-jboss-vfs "0.1.0"]
+                 [re-catch "0.1.4"]
                  [reagent "1.2.0"]
                  [ring-webjars "0.2.0"]
                  [ring/ring-core "1.12.1"]
@@ -51,7 +52,6 @@
 
   :profiles
   {:uberjar {:omit-source true
-
              :prep-tasks ["compile" ["run" "-m" "shadow.cljs.devtools.cli" "release" "app"]]
              :aot :all
              :uberjar-name "classify.jar"

@@ -26,7 +26,7 @@ See dev-config.edn. Other than luminus app settings,
          "D" "d/"
          "Other" "o/"}}
 
-To start a web server for the application, run:
+To start the application, run:
 
     lein run
 
@@ -50,6 +50,11 @@ java -jar target/uberjar/classify.jar
 clj:user> (start)
 % open http://localhost:3000
 ```
+
+## Calva
+
+1. Leiningen + shadow-cljs
+2. after stating, choose :app to build.
 
 ## License
 
