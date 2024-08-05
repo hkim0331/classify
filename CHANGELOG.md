@@ -13,7 +13,7 @@ need to upgrade/maintain? try to new `sorting` app?
 
 ```
 
-## v0.6-SNAPSHOT
+## 0.6-SNAPSHOT / 2024-08-04
 - re-catch
   https://github.com/potapenko/re-catch
 - 読み出す回答が尽きてもエラーにしない。
