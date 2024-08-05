@@ -52,7 +52,6 @@
 
   :profiles
   {:uberjar {:omit-source true
-
              :prep-tasks ["compile" ["run" "-m" "shadow.cljs.devtools.cli" "release" "app"]]
              :aot :all
              :uberjar-name "classify.jar"
