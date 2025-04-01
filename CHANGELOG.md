@@ -14,7 +14,7 @@ need to upgrade/maintain? try to new `sorting` app?
 
 ```
 
-## 0.7.0-SNAPSHOT
+## 0.7.0 (2025-04-01)
 
 - セカンダリ github アカウント
   元々はオンリーだった hkim0331 をセカンダリにしてみる。
