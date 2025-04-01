@@ -13,6 +13,9 @@ need to upgrade/maintain? try to new `sorting` app?
 ; Jack-in done.
 
 ```
+## 0.7.1-SNAPSHOT
+
+- hkimjp でプッシュできるか？
 
 ## 0.7.0 (2025-04-01)
 
