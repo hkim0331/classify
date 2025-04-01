@@ -3,6 +3,7 @@
 need to upgrade/maintain? try to new `sorting` app?
 
 ## Unreleased
+
 - Undo
 - cljs: p/pre/md->hiccup を実行時に選択できる。
 - Leiningen + shadow-cljs で REPL につながらなくなった。ビルド後、
@@ -12,6 +13,11 @@ need to upgrade/maintain? try to new `sorting` app?
 ; Jack-in done.
 
 ```
+
+## 0.7.0 (2025-04-01)
+
+- セカンダリ github アカウント
+  元々はオンリーだった hkim0331 をセカンダリにしてみる。
 
 ## v0.6.66 / 2024-08-05
 - re-catch

@@ -82,7 +82,8 @@
      (when (pos? c)
        [:div
         [buttons-component]
-        [rc/catch (m/md->hiccup (:docs @session))]
+        #_[rc/catch (m/md->hiccup (:docs @session))]
+        [rc/catch [:pre (:docs @session)]]
         [buttons-component]])]))
 
 
